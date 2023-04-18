@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Лаб робота 3</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div test="1">
+    <script>
+        var input = "";
+        var test = 0;
+        var work = "";
+        var reserv = 0;
+        var sum = 0;
+        
+        function myMinFunc() {
+
+            input = document.getElementById("input").value;            
+            console.log(parseInt(input));
+            work = input;
+            
+            if (work == "" || work == "-" || work == "+"){
+                document.getElementById("input").value = "-";
+            }else{
+                reserv = parseInt(input);
+                console.log(reserv); 
+                document.getElementById("input").value = "-";
+            }
+
+            if (reserv != 0 && work != "" && work != "-" && work != "+"){
+                sum = sum + reserv;
+                console.log(sum); 
+            }
+           
+            test = 0;
+        }
+
+        function myPlusFunc() {
+
+            input = document.getElementById("input").value;
+            console.log(parseInt(input));
+            work = input;
+            
+            if (work == "" || work == "-" || work == "+"){
+                document.getElementById("input").value = "+";
+            }else{
+                reserv = parseInt(input);
+                console.log(reserv); 
+                document.getElementById("input").value = "+";
+            }
+
+            if (reserv != 0 && work != "" && work != "-" && work != "+"){
+                sum = sum + reserv;
+                console.log(sum); 
+            }
+            test = 0;
+        }
+
+        function myResFunc() {
+
+            input = document.getElementById("input").value;
+            console.log(parseInt(input));
+            work = input;
+
+            if (work == "" || work == "-" || work == "+"){
+                document.getElementById("input").value = "";
+            }else{
+                reserv = parseInt(input);
+                console.log(reserv); 
+                document.getElementById("input").value = "";
+            }
+
+            if (reserv != 0 && work != "" && work != "-" && work != "+" && test == 0){
+                sum = sum + reserv;
+                console.log(sum); 
+            }
+
+            document.getElementById('input').value = sum;
+            test = 1;
+            sum = 0;
+        }
+        
+        function myRemFunc() {
+            work = "";
+            reserv = 0;
+            sum = 0;
+            test = 0;
+            document.getElementById("input").value = "";
+        }
+
+    </script>
+    <div class = "main">
+        <input type="text"  id="input" class="input" value="">
+        <div class = "buttons">
+            <button type="button" onclick='document.getElementById("input").value += "7" 'class="bt">7</button>
+            <button type="button" onclick='document.getElementById("input").value += "8" 'class="bt">8</button>
+            <button type="button" onclick='document.getElementById("input").value += "9" 'class="bt">9</button>
+
+            <button type="button" onclick='document.getElementById("input").value += "4" 'class="bt">4</button>
+            <button type="button" onclick='document.getElementById("input").value += "5" 'class="bt">5</button>
+            <button type="button" onclick='document.getElementById("input").value += "6" 'class="bt">6</button>
+            
+            <button type="button" onclick='document.getElementById("input").value += "1" 'class="bt">1</button>
+            <button type="button" onclick='document.getElementById("input").value += "2" 'class="bt">2</button>
+            <button type="button" onclick='document.getElementById("input").value += "3" ' class="bt">3</button>
+
+            <button type="button" onclick='document.getElementById("input").value += "0" 'class="bt">0</button>
+            <button type="button" onclick="myMinFunc()" class="bt">-</button>
+            <button type="button" onclick="myPlusFunc()" class="bt">+</button>
+        </div>  
+        <button type="button" onclick="myResFunc()" class="bt result">=</button>
+        <button type="button" onclick="myRemFunc()" class="bt remove red">C</button>  
+    </div>
+    <script>
+        
+    </script>    
+</body>
+</html>
